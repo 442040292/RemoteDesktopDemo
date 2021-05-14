@@ -1,0 +1,45 @@
+﻿<Window x:Class="RemoteDesktopDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RemoteDesktopDemo"
+        xmlns:vm="clr-namespace:RemoteDesktopDemo.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="Window_Loaded"
+        >
+    <Window.DataContext>
+        <vm:MainViewModel x:Name="MainViewModel" />
+    </Window.DataContext>
+    <Grid>
+        <Grid Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="233*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <WindowsFormsHost  x:Name="host" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="157*"/>
+                    <RowDefinition Height="262*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0">
+                    <TextBlock Text="地址"  />
+                    <TextBox Text="{Binding Address}"/>
+                    <TextBlock Text="账号"  />
+                    <TextBox Text="{Binding Name}"/>
+                    <TextBlock Text="密码"  />
+                    <TextBox Text="{Binding Password}"/>
+
+                    <Button Command="{Binding ConnectCommand}" Content="{Binding BtnContent}"/>
+                    <Button Command="{Binding FullscreenCommand}" Content="全屏"/>
+
+                </StackPanel>
+                <TextBox Text="{Binding RunningLog}" AcceptsReturn="True" AcceptsTab="True" Margin="0" Grid.Row="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible"/>
+            </Grid>
+            <GridSplitter Width="2" Background="Red" />
+        </Grid>
+
+    </Grid>
+</Window>

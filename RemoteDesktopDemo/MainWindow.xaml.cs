@@ -135,7 +135,28 @@ namespace RemoteDesktopDemo
             secured2.AllowCredentialSaving = false;
             secured2.PromptForCredentials = false;
             secured2.PromptForCredsOnClient = false;
-            secured2.EnableCredSspSupport = true;
+            this.rdp.AdvancedSettings9.AuthenticationLevel = 0;
+
+
+            //this.rdp.AdvancedSettings8.ClearTextPassword = password;
+            //this.rdp.AdvancedSettings3.ConnectToServerConsole = true;
+            //this.rdp.AdvancedSettings8.ConnectToAdministerServer = true;
+            //this.rdp.AdvancedSettings9.AuthenticationLevel = 0;
+            //this.rdp.AdvancedSettings8.EnableAutoReconnect = true;
+            //this.rdp.AdvancedSettings8.RedirectDrives = true;
+            //this.rdp.AdvancedSettings8.GrabFocusOnConnect = true;
+            //this.rdp.AdvancedSettings8.DisplayConnectionBar = true;
+            //this.rdp.AdvancedSettings8.EnableWindowsKey = 1;
+            //this.rdp.AdvancedSettings8.DisableCtrlAltDel = 1;
+            //this.rdp.AdvancedSettings8.allowBackgroundInput = 1;
+            //this.rdp.AdvancedSettings8.AcceleratorPassthrough = 1;
+            //this.rdp.AdvancedSettings8.BitmapPeristence = 1;
+            //this.rdp.AdvancedSettings8.Compress = 1;
+            //this.rdp.AdvancedSettings8.DoubleClickDetect = 1;
+            //this.rdp.AdvancedSettings7.EnableCredSspSupport = true;
+            //this.rdp.AdvancedSettings2.PerformanceFlags |= 0x00000080; //TS_PERF_ENABLE_FONT_SMOOTHING;
+            //this.rdp.AdvancedSettings9.PluginDlls = "UDVC-Plugin.dll"; // Nothing happen with this code
+
 
             try
             {
